@@ -1,29 +1,6 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        BreakingBadMovie
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+
   </div>
 </template>
 
@@ -33,12 +10,28 @@ export default {}
 
 <style>
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  display: inline-block;
   text-align: center;
+  
+  background-image: url('@/assets/img/index_img.jpg');
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  background-image: linear-gradient(45deg rgba(0,0,0,0) rgba(0,0,0,1));
+  opacity: 0.8;
 }
 
 .title {
