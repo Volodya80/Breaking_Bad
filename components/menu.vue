@@ -1,11 +1,12 @@
 <template>
-    <div class="menu-area">
-        <p class="h2 text-center">Содержание</p>
-        <ul class="nav-bar navbar-dark bg-dark">
-            <li v-for="(el,key) in menuItems" v-bind:key="key" class="nav-item">
-                <nuxt-link :to="el.adress" class-active="active">
-                    {{ el.menuItem }}
-                </nuxt-link>
+    <div class="container-fluid">
+        <p class="h3 text-center">Содержание</p>
+        <ul class="list-group">
+            <li class="list-group-item"
+                v-for="(el,key) in menuItems" v-bind:key="key">
+                    <nuxt-link :to="el.adress" >
+                        {{ el.menuItem }}
+                    </nuxt-link>
             </li>
         </ul>
     </div>
@@ -31,31 +32,8 @@ export default {
 </script>
 
 <style lang="scss">
-    @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+    //@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
     
-    $txt-color: #a3eb87;
-    $txt-color-hover: #FFFFFF;
-
-    .menu-area {
-
-        //background-color: $bk-color;
-        color: $txt-color;
-
-        font-family: 'Rubic', sans-serif;
-
-        margin: 5px 5px;
-        ul {
-            li {
-                cursor: pointer;
-            }
-            li:hover {
-                color: $txt-color-hover;
-            }
-        }
-
-        .active {
-            color: yellow;
-        }
-    }
+   
 </style>

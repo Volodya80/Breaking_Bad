@@ -10,16 +10,18 @@
     <Nuxt />
   </main>
   <footer>
-    <h3>I'm a little area</h3>
+    <MyFooter />
   </footer>
 </div>
 </template>
 
 <script>
 import MyMenu from "@/components/menu"
+import MyFooter from "@/components/my-footer"
 export default {
   components: {
-    MyMenu
+    MyMenu,
+    MyFooter
   }
 }
 
@@ -28,7 +30,7 @@ export default {
 <style lang="scss">
 $txt-color: #a3eb87;
 $txt-color-hover: #FFFFFF;
-$bk-color: #313f2d; 
+$bk-color: #313f2d;
 
       #app {
           display: grid;
@@ -59,7 +61,7 @@ $bk-color: #313f2d;
               position: relative;
 
               width: 20vw;
-              height: 90%;
+              height: inherit;
 
               top: 0;
               left: 0;
@@ -75,7 +77,7 @@ $bk-color: #313f2d;
         nav {
           grid-area: b;
 
-          background-color: $bk-color;
+          //background-color: $bk-color;
           border: 1px solid blue;
         }
         main {
