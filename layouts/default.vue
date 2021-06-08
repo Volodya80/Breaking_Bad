@@ -1,7 +1,7 @@
 <template>
  <div id="app">
   <header>
-    <div class="header-title">rrew</div>
+    <MyHeader />
   </header>
   <nav>
     <MyMenu />
@@ -18,9 +18,11 @@
 <script>
 import MyMenu from "@/components/menu"
 import MyFooter from "@/components/my-footer"
+import MyHeader from "@/components/myheader"
 export default {
   components: {
     MyMenu,
+    MyHeader,
     MyFooter
   }
 }
@@ -34,45 +36,26 @@ $bk-color: #313f2d;
 
       #app {
           display: grid;
-          
-          grid-template-columns: 1fr 3fr;
-          grid-template-rows: 15vh 80vh 5vh;
-          grid-template-areas: "a a"
-                              "b c"
-                              "d d";
-          /* align-content: initial; */
+          @media screen and (min-width:1000px) {
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: 15vh minmax(80vh, auto) 5vh;
+            grid-template-areas: "a a"
+                                "b c"
+                                "d d";
+            /* align-content: initial; */
+          }
+          @media (min-width: 400px) and (max-width: 1000px) {
+            grid-template-columns: 1fr;
+            //grid-template-rows: repeat(4, 100px);
+            grid-template-areas: "a"
+                                "b"
+                                "c"
+                                "d";
+          }
           align-content: space-around;
           
         header {
           grid-area: a;
-          border: 1px solid transparent;
-
-          background-image: url('@/assets/img/header_img_0.png');
-          background-position: top right;
-          background-repeat: no-repeat;
-          background-size: contain;
-
-          background-color: #000000;
-
-          color: white;
-          /* background-origin:content-box; */
-      
-            header-title {
-              position: relative;
-
-              width: 20vw;
-              height: inherit;
-
-              top: 0;
-              left: 0;
-
-              background-image: url('@/assets/img/Breaking_Bad_logo.svg');
-              background-repeat: no-repeat;
-              background-position: top left;
-              background-size: contain;
-
-              border: 1px solid yellow;
-            } //header-title
         } // header
         nav {
           grid-area: b;

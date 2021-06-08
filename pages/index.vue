@@ -1,7 +1,18 @@
 <template>
-  <div class="container">
-    <img src="@/assets/img/index_img.jpg" class="img-fluid" alt="picture">
+  <div class="mycontainer">
+    <div class="inner">
+      <p class="text-primary h2 my-3">Во все тяжкие</p>
+      <p class="text-white">Американский телевизионный сериал, в котором показана история школьного учителя Уолтера Уайта,
+      у которого дианостировали неоперабельный рак лёгких. Вместе со своим бывшим учеником Джесси Пинкманом 
+      он начинает производить и продавать метамфетамин, чтобы обеспечить финансовое будущее своей семьи.
+      </p>
+      <iframe width="400" height="200" src="https://www.youtube.com/embed/L5l3vv9n7EU" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+        clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+    </div>
   </div>
+    
 </template>
 
 <script>
@@ -10,6 +21,7 @@ export default {}
 
 <style lang="scss" scoped>
 .mycontainer {
+  
   width: 100%;
   height: 100%;
 
@@ -18,25 +30,22 @@ export default {}
 
 
   position: relative;
-  //text-align: center;
   
   background-image: url('@/assets/img/index_img.jpg');
   
   background-size: cover;
   background-repeat: no-repeat;
-}
-.mycontainer:after {
-/*   content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: transparent;
-  background-image: linear-gradient(45deg rgba(0,0,0,0) rgba(0,0,0,1));
-  opacity: 0.8; */
-}
 
 
+  .inner {
+    
+    position: relative;
+    border: 1px solid transparent;
+
+    width: 30vw;
+
+    padding-top: 2%;
+    padding-left: 3%;
+  }
+}
 </style>

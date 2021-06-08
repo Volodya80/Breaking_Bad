@@ -20,8 +20,7 @@ export default {
             menuItems: [
                 {menuItem: 'О проекте',             adress: "/about"},
                 {menuItem: 'О сериале',             adress: "/"},
-                {menuItem: 'Герои',                 adress: "/"},
-                {menuItem: 'Актерский состав',      adress: "/"},
+                {menuItem: 'Герои и актеры',        adress: "/heroes"},
                 {menuItem: 'Съемочная группа',      adress: "/"},
                 {menuItem: 'Фотогалерея',           adress: "/"},
                 {menuItem: '20 фактов о сериале',   adress: "/"}
