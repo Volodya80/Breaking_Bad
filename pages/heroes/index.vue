@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="upBtn">Наверх</a>
+        <a href="#" class="upBtn" v-show="scrolled">Наверх</a>
     </div>
 </template>
 
@@ -47,7 +47,7 @@
         border: 1px solid darkblue;
         border-radius: 3px;
         
-        background-color: blue;
+        background-color: rgba(0, 0, 255, 0.5);
 
         color: white;
     }
@@ -58,23 +58,30 @@
 export default {
     data() {
         return {
-            heros: []
+            heros: [],
+            scrolled: false
         }
     },
     async created(){
         await this.getHeros();
+        window.addEventListener('scroll', this.handleScroll);
     },
     methods: {
         async getHeros() {
             let response = await fetch("https://www.breakingbadapi.com/api/characters/");
             let data = await response.json();
-            console.log(data);
             for (let i in data) {
                 this.heros.push(data[i]);
             }
         },
         getMoreInfo(hero){
             this.$router.push('/heroes/'+hero.char_id);
+        },
+        handleScroll () {
+            this.scrolled = window.scrollY > 50;
+        },
+        destroyed(){
+            window.removeEventListener('scroll', this.handleScroll);
         }
     }
 }

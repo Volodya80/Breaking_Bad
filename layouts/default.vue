@@ -17,7 +17,7 @@
 
 <script>
 import MyMenu from "@/components/menu"
-import MyFooter from "@/components/my-footer"
+import MyFooter from "@/components/myfooter"
 import MyHeader from "@/components/myheader"
 export default {
   components: {

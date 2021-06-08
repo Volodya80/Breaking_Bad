@@ -19,9 +19,9 @@ export default {
             selectedItem: 0,
             menuItems: [
                 {menuItem: 'О проекте',             adress: "/about"},
-                {menuItem: 'О сериале',             adress: "/"},
+                {menuItem: 'О сериале',             adress: "/about"},
                 {menuItem: 'Герои и актеры',        adress: "/heroes"},
-                {menuItem: 'Съемочная группа',      adress: "/"},
+                {menuItem: 'Цитаты',                adress: "/quotes"},
                 {menuItem: 'Фотогалерея',           adress: "/"},
                 {menuItem: '20 фактов о сериале',   adress: "/"}
             ]
