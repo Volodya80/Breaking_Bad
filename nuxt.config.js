@@ -1,4 +1,5 @@
 export default {
+
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -14,6 +15,10 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+
+  server: {
+    host:"0.0.0.0"
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -45,5 +50,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    publicPath: '/Breaking_bad_prod/'
   }
 }
