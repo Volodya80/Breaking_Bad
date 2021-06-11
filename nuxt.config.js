@@ -1,9 +1,10 @@
 export default {
+  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Во все тяжкие - сериал',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ru'
     },
     meta: [
       { charset: 'utf-8' },

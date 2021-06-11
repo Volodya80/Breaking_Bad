@@ -18,21 +18,14 @@ export default {
         return {
             selectedItem: 0,
             menuItems: [
-                {menuItem: 'О проекте',             adress: "/about"},
                 {menuItem: 'О сериале',             adress: "/about"},
                 {menuItem: 'Герои и актеры',        adress: "/heroes"},
                 {menuItem: 'Цитаты',                adress: "/quotes"},
-                {menuItem: 'Фотогалерея',           adress: "/"},
-                {menuItem: '20 фактов о сериале',   adress: "/"}
+                {menuItem: 'Фотогалерея',           adress: "/gallery"},
+                //{menuItem: '20 фактов о сериале',   adress: "/"},
+                {menuItem: 'На главную',            adress: "/"}
             ]
         }
     }
 }
 </script>
-
-<style lang="scss">
-    //@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-
-    
-   
-</style>

@@ -2,8 +2,8 @@
   <div class="mycontainer">
     <div class="inner">
       <p class="text-primary h2 my-3">Во все тяжкие</p>
-      <p class="text-white">Американский телевизионный сериал, в котором показана история школьного учителя Уолтера Уайта,
-      у которого дианостировали неоперабельный рак лёгких. Вместе со своим бывшим учеником Джесси Пинкманом 
+      <p class="text-white">Американский телевизионный сериал, в котором показана история школьного учителя <strong>Уолтера Уайта</strong>,
+      у которого дианостировали неоперабельный рак лёгких. Вместе со своим бывшим учеником <strong>Джесси Пинкманом</strong> 
       он начинает производить и продавать метамфетамин, чтобы обеспечить финансовое будущее своей семьи.
       </p>
       <iframe width="400" height="200" src="https://www.youtube.com/embed/L5l3vv9n7EU" 
@@ -42,7 +42,9 @@ export default {}
     position: relative;
     border: 1px solid transparent;
 
-    width: 30vw;
+    @media screen and (min-width:1000px) {
+        width: 30vw;
+    }
 
     padding-top: 2%;
     padding-left: 3%;

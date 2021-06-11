@@ -44,14 +44,15 @@ $bk-color: #313f2d;
                                 "d d";
             /* align-content: initial; */
           }
-          @media (min-width: 400px) and (max-width: 1000px) {
+          @media (max-width: 1000px) {
             grid-template-columns: 1fr;
-            //grid-template-rows: repeat(4, 100px);
+            grid-template-rows: repeat(3, minmax(10vh, auto)) minmax(5vh, auto);
             grid-template-areas: "a"
                                 "b"
                                 "c"
                                 "d";
           }
+
           align-content: space-around;
           
         header {
@@ -61,15 +62,18 @@ $bk-color: #313f2d;
           grid-area: b;
 
           //background-color: $bk-color;
-          border: 1px solid blue;
+          border: 1px solid transparent;
         }
         main {
           grid-area: c;
-          border: 1px solid green;
+          border: 0px solid transparent;
         }
         footer {
           grid-area: d;
-          border: 1px solid red;
+          border: 1px solid transparent;
+
+          background-color: black;
+          color: gray;
         }
       }
 
