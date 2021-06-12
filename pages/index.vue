@@ -48,6 +48,13 @@ export default {}
 
     padding-top: 2%;
     padding-left: 3%;
+
+    >iframe {
+      @media (max-width:500px) {
+        width: 90vw;
+      }
+    }
+    
   }
 }
 </style>

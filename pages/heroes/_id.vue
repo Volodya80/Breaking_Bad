@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <p class="h1 text-primary text-center my-3">Дополнительные сведения</p>
+        <p class="h1 text-primary text-center my-3">Подробнее</p>
         <div class="card">
             <img :src="hero.img" class="card-img-left" :alt="hero.name">
             <div class="card-body">
@@ -34,9 +34,18 @@ export default {
 <style lang="scss" scoped>
 .card {
     display: flex;
-    flex-direction: row;
-    .card-img-left {
-        width: 300px;
+    @media screen and (min-width:1000px) {
+        flex-direction: row;
+        .card-img-left {
+            width: 300px;
+        }
     }
+    @media (max-width:600px) 
+    {
+        flex-direction: column;
+        .card-img-left {
+            width: 90vw;
+        }
+    } 
 }
 </style>
