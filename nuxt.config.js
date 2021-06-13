@@ -1,3 +1,4 @@
+const isDev = process.env.NODE_ENV !== 'production'
 export default {
 
   target: 'static',
@@ -49,7 +50,59 @@ export default {
   axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
+  render: {
+    http2: {
+         push: true,
+         pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
+         .map(f => `<${publicPath}${f.file}>; rel=preload; as=${f.asType}`)
+       },
+    compressor: false,
+    resourceHints: false,
+    etag: false,
+    static: {
+      etag: false
+    }
+  },
+  /*
+  ** Build configuration
+  */
   build: {
-    publicPath: '/Breaking_bad_prod/'
+    optimizeCss: false,
+    filenames: {
+      app: ({ isDev }) => isDev ? '[name].js' : 'js/[contenthash].js',
+      chunk: ({ isDev }) => isDev ? '[name].js' : 'js/[contenthash].js',
+      css: ({ isDev }) => isDev ? '[name].css' : 'css/[contenthash].css',
+      img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+      font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+      video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+    },
+    ...(!isDev && {
+      html: {
+        minify: {
+          collapseBooleanAttributes: true,
+          decodeEntities: true,
+          minifyCSS: true,
+          minifyJS: true,
+          processConditionalComments: true,
+          removeEmptyAttributes: true,
+          removeRedundantAttributes: true,
+          trimCustomFragments: true,
+          useShortDoctype: true
+        }
+      }
+    }),
+    splitChunks: {
+      layouts: true,
+      pages: true,
+      commons: true
+    },
+    optimization: {
+      minimize: !isDev
+    },
+    ...(!isDev && {
+      extractCSS: {
+        ignoreOrder: true
+      }
+    })
   }
 }

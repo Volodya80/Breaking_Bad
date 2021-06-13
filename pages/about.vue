@@ -1,6 +1,7 @@
 <template>
 <div class="container px-5">
     <p class="h1 text-primary text-center my-2"> О сериале </p>
+    <a href="#" class="upBtn" v-show="scrolled">Наверх</a>
     <p>
         Breaking Bad, известный в России как «Во все тяжкие», регулярно попадает в многочисленные подборки лучших сериалов в истории, обычно занимая место в первой десятке или даже пятерке. Бывает так, что продюсеры еще на стадии разработки сценария и подготовки к съемкам понимают, что у них неизбежно получится телехит — «Игра престолов» яркий тому пример. Breaking Bad — не из их числа. Этой великой драмы вообще могло не быть, если бы не цепочка счастливых случайностей и череда незначительных на первый взгляд событий.
     </p>
@@ -224,6 +225,22 @@
     p{
         text-align: justify;
     }
+    .upBtn {
+        position: fixed;
+        bottom: 3%;
+        right: 1%;
+
+        padding: 5px;
+
+        text-decoration: none;
+
+        border: 1px solid darkblue;
+        border-radius: 3px;
+        
+        background-color: rgba(0, 0, 255, 0.5);
+
+        color: white;
+    }
     .quote {
         padding-left: 25px;
         margin-left: 10px;
@@ -246,3 +263,24 @@
     }
 }
 </style>
+
+<script>
+export default {
+    data() {
+        return {
+            scrolled: false
+        }
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed(){
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll () {
+            this.scrolled = window.scrollY > 50;
+        }
+    }
+}
+</script>

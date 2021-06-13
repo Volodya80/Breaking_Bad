@@ -25,7 +25,7 @@ export default {
     async asyncData({$axios, params}){
         const heroes = await $axios.$get("https://www.breakingbadapi.com/api/characters/"+params.id);
         const hero = heroes[0];
-        console.log(hero);
+        //console.log(hero);
         return {hero};
     }
 }
